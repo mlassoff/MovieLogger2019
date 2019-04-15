@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Movie Logger</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="movies.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="Movie.js"></script>
+        <script src="localforage/dist/localforage.js"></script>
+        <script type="text/javascript" src="Movie_Main.js"></script>
+
+    </head>
+    <body>
+        <!-- Create a record -->
+        <div data-role="page" id="create">
+	       <div data-role="header"><h1>Movie Log</h1></div>
+	       <div data-role="content">
+               <fieldset style="border: 1px solid black; padding: 20px; border-radius: 10px; color: dimgrey;">
+                   <legend>Movie Info</legend>
+                 <form>
+                    <label for="name">Movie Name</label>
+                     <input type="text" id="name" name="name"/>
+                       <label for="name">Year</label>
+                     <input type="text" id="year" name="year"/>
+                     <label for="category">Category</label>
+                     <select id="category">
+                        <option value="action">Action</option>
+                         <option value="animation">Animation</option>
+                         <option value="comedy">Comedy</option>
+                        <option value="crime">Crime</option>             <option value="documentary">Documentary</option>
+                         <option value="drama">Drama</option>
+                         <option value="family">Family</option>         <option value="fantasy">Fantasy</option>        <option value="horror">Horror</option>
+                        <option value="musical">Musical</option>
+                         <option value="mystery">Mystery</option>
+                        <option value="thriller">Thriller</option>
+                         <option value="war">War</option>
+                         <option value="western">Western</option>
+                     </select>
+                     <label for="dateWatched">Date Watched</label>
+                     <input type="date" id="dateWatched"/>
+                     <label for="personalRating">Personal Rating</label>
+                     <input type="range" min="1" max="4" value="4" id="personalRating"/>
+
+                   </form>
+                   <button id="btnSave">Save to Movie Log</button>
+                   </fieldset>
+               <a href="#master"><button>Display Movie Log</button></a>
+            </div>
+            <div data-role="footer" class="footer"><h2>Framework</h2></div>
+        </div>
+
+        <!-- Display Master Records -->
+        <div data-role="page" id="master">
+	       <div data-role="header"><h1>Movie Logged</h1></div>
+	       <div data-role="content">
+               <div id="movieData"></div>
+               <div id="#btnDiv">
+                   <a href="#create"><button id="btnAddMovie">Add Movie</button></a></div>
+            </div>
+            <div data-role="footer" class="footer"><h2>Framework</h2></div>
+        </div>
+
+        <!-- Display Record Detail -->
+        <div data-role="page" id="detail">
+	       <div data-role="header"><h1>Movie Details</h1></div>
+	       <div data-role="content" >
+                <div id="detailContent">
+
+               </div>
+               <a href="#create"><button>New Movie</button></a>
+               <button id="btnDelete">Delete Movie</button>
+               <a href="#master"><button>Display Movie Log</button></a>
+            </div>
+            <div data-role="footer" class="footer"><h2>Framework</h2></div>
+        </div>
+
+
+            </body>
+</html>
